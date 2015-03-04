@@ -3,19 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ese102.complexnumber;
+package complexnumber;
 
 /**
  *
  * @author Caterina Eracli
  */
-public class Ese102ComplexNumber {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class ComplexNumber {
     
 }
