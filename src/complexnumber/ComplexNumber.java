@@ -50,4 +50,18 @@ public class ComplexNumber {
         String r = this.getModulus() + "+(" + this.getArgument() + ")i";
         return r;
     }
+    public ComplexNumber add (ComplexNumber operand){
+        ComplexNumber sum=new ComplexNumber();
+        double re=this.re+operand.getRe();
+        double im=this.im+operand.getIm();
+        sum.setRectangular(re, im);
+        return sum;
+    }
+    public ComplexNumber sub (ComplexNumber operand){
+        ComplexNumber sub=new ComplexNumber();
+        double re=this.re-operand.getRe();
+        double im=this.im-operand.getIm();
+        sub.setRectangular(re, im);
+        return sub;
+    }
 }
