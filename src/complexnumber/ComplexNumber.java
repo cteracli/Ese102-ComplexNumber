@@ -43,25 +43,39 @@ public class ComplexNumber {
         this.re=re;
     }
     public String stampaRectangular(){
-        String r = this.getRe() + "+(" + this.getIm() + ")i";
+        String r = (float) this.getRe() + "+(" + (float) this.getIm() + ")i";
         return r;
     }
     public String stampaPolar(){
-        String r = this.getModulus() + "+(" + this.getArgument() + ")i";
+        String r = (float) this.getModulus() + "+(" + (float) this.getArgument() + ")i";
         return r;
     }
-    public ComplexNumber add (ComplexNumber operand){
+    public ComplexNumber add(ComplexNumber operand){
         ComplexNumber sum=new ComplexNumber();
         double re=this.re+operand.getRe();
         double im=this.im+operand.getIm();
         sum.setRectangular(re, im);
         return sum;
     }
-    public ComplexNumber sub (ComplexNumber operand){
-        ComplexNumber sub=new ComplexNumber();
+    public ComplexNumber sub(ComplexNumber operand){
+        ComplexNumber subtraction=new ComplexNumber();
         double re=this.re-operand.getRe();
         double im=this.im-operand.getIm();
-        sub.setRectangular(re, im);
-        return sub;
+        subtraction.setRectangular(re, im);
+        return subtraction;
+    }
+    public ComplexNumber multiply(ComplexNumber operand){
+        ComplexNumber multiplication=new ComplexNumber();
+        double modulus=this.getModulus()*operand.getModulus();
+        double argument=this.getArgument()+operand.getArgument();
+        multiplication.setPolar(modulus, argument);
+        return multiplication;
+    }
+    public ComplexNumber divide(ComplexNumber operand){
+        ComplexNumber division=new ComplexNumber();
+        double modulus=this.getModulus()/operand.getModulus();
+        double argument=this.getArgument()-operand.getArgument();
+        division.setPolar(modulus, argument);
+        return division;
     }
 }

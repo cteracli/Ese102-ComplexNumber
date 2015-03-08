@@ -51,7 +51,7 @@ public class Ese102 {
             }
         }
         
-        a.setRectangular(im, re);
+        a.setRectangular(re, im);
 	System.out.println("Coordinate polari: " + a.stampaPolar());
         System.out.println("Coordinate cartesiane: " + a.stampaRectangular());
         
@@ -85,10 +85,63 @@ public class Ese102 {
 
 	a.setPolar(mod, arg);
 	System.out.println("Coordinate polari: " + a.stampaPolar());
-        System.out.println("Coordinate cartesiane: " + a.stampaRectangular
-        ());
+        System.out.println("Coordinate cartesiane: " + a.stampaRectangular());
 
-
+        
+        ComplexNumber b=new ComplexNumber();
+        
+        valoreValido=false;
+        double re1=0;
+        while(!valoreValido) {
+            System.out.print("Inserisci numero reale per le operazioni: ");
+            linea = tastiera.readLine();
+            try {
+                re1=Double.valueOf(linea).doubleValue();
+                valoreValido=true;
+            }
+            catch (NumberFormatException e) {
+                System.out.println("Numero non valido");
+            }
+        }
+        
+        valoreValido=false;
+	double im1=0;
+        while(!valoreValido) {
+            System.out.print("Inserisci numero immaginario per le operazioni: ");
+            linea = tastiera.readLine();
+            try {
+                im1=Double.valueOf(linea).doubleValue();
+                valoreValido=true;
+            }
+            catch (NumberFormatException e) {
+                System.out.println("Numero non valido");
+            }
+        }
+        b.setRectangular(re1, im1);
+        
+        ComplexNumber sum=new ComplexNumber();
+        sum=a.add(b);
+        
+        ComplexNumber subtraction=new ComplexNumber();
+        subtraction=a.sub(b);
+        
+        ComplexNumber multiplication=new ComplexNumber();
+        multiplication=a.multiply(b);
+        
+        ComplexNumber division=new ComplexNumber();
+        division=a.divide(b);
+        
+        System.out.println("Addizione coordinate cartesiane: " +sum.stampaRectangular());
+        System.out.println("Addizione coordinate polari: " +sum.stampaPolar());
+        
+        System.out.println("Sottrazione coordinate cartesiane: " +subtraction.stampaRectangular());
+        System.out.println("Sottrazione coordinate polari: " +subtraction.stampaPolar());
+        
+        System.out.println("Moltiplicazione coordinate cartesiane: " +multiplication.stampaRectangular());
+        System.out.println("Moltiplicazione coordinate polari: " +multiplication.stampaPolar());
+        
+        System.out.println("Divisione coordinate cartesiane: " +division.stampaRectangular());
+        System.out.println("Divisione coordinate polari: " +division.stampaPolar());
     }
 
     
