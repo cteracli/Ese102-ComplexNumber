@@ -10,12 +10,26 @@ package complexnumber;
  * @author Caterina Eracli
  */
 public class ComplexNumber {
+    private static double initRe;
+    private static double initIm;
     
     private double re;
     private double im;
+    
     public ComplexNumber(){
-        this.re=0;
-        this.im=0;
+        this.re=initRe;
+        this.im=initIm;
+    }
+    static public void setInitRectangular(double re, double im){
+        initRe=re;
+        initIm=im;
+    }
+    static public void setInitPolar(double modulus, double argument){
+        if(modulus<0){
+            throw new IllegalArgumentException("Valore del modulo errato: deve essere magiore od uguale a 0.");
+        }
+        initRe=modulus*Math.cos(argument);
+        initIm=modulus*Math.sin(argument);
     }
     public double getRe(){
         return re;
@@ -77,5 +91,12 @@ public class ComplexNumber {
         double argument=this.getArgument()-operand.getArgument();
         division.setPolar(modulus, argument);
         return division;
+    }
+    public ComplexNumber getConjugate(ComplexNumber operand){
+        ComplexNumber conjugation=new ComplexNumber();
+        double re=operand.getRe();
+        double im=operand.getIm();
+        conjugation.setRectangular(-im, re);
+        return conjugation;
     }
 }
