@@ -64,35 +64,35 @@ public class ComplexNumber {
         String r = (float) this.getModulus() + "+(" + (float) this.getArgument() + ")i";
         return r;
     }
-    public ComplexNumber add(ComplexNumber operand){
+    static public ComplexNumber add(ComplexNumber operand1, ComplexNumber operand2){
         ComplexNumber sum=new ComplexNumber();
-        double re=this.re+operand.getRe();
-        double im=this.im+operand.getIm();
+        double re=operand1.getRe()+operand2.getRe();
+        double im=operand1.getIm()+operand2.getIm();
         sum.setRectangular(re, im);
         return sum;
     }
-    public ComplexNumber sub(ComplexNumber operand){
+    static public ComplexNumber sub(ComplexNumber operand1, ComplexNumber operand2){
         ComplexNumber subtraction=new ComplexNumber();
-        double re=this.re-operand.getRe();
-        double im=this.im-operand.getIm();
+        double re=operand1.getRe()-operand2.getRe();
+        double im=operand1.getIm()-operand2.getIm();
         subtraction.setRectangular(re, im);
         return subtraction;
     }
-    public ComplexNumber multiply(ComplexNumber operand){
+    static public ComplexNumber multiply(ComplexNumber operand1, ComplexNumber operand2){
         ComplexNumber multiplication=new ComplexNumber();
-        double modulus=this.getModulus()*operand.getModulus();
-        double argument=this.getArgument()+operand.getArgument();
+        double modulus=operand1.getModulus()*operand2.getModulus();
+        double argument=operand1.getArgument()+operand2.getArgument();
         multiplication.setPolar(modulus, argument);
         return multiplication;
     }
-    public ComplexNumber divide(ComplexNumber operand){
+    static public ComplexNumber divide(ComplexNumber operand1, ComplexNumber operand2){
         ComplexNumber division=new ComplexNumber();
-        double modulus=this.getModulus()/operand.getModulus();
-        double argument=this.getArgument()-operand.getArgument();
+        double modulus=operand1.getModulus()/operand2.getModulus();
+        double argument=operand1.getArgument()-operand2.getArgument();
         division.setPolar(modulus, argument);
         return division;
     }
-    public ComplexNumber getConjugate(ComplexNumber operand){
+    static public ComplexNumber getConjugate(ComplexNumber operand){
         ComplexNumber conjugation=new ComplexNumber();
         double re=operand.getRe();
         double im=operand.getIm();

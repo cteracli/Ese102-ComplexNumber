@@ -18,6 +18,8 @@ public class Ese102 {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
+        ComplexNumber.setInitRectangular(0, 0);
+        
         InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader tastiera = new BufferedReader(input);        
         
@@ -120,16 +122,19 @@ public class Ese102 {
         b.setRectangular(re1, im1);
         
         ComplexNumber sum=new ComplexNumber();
-        sum=a.add(b);
+        ComplexNumber.add(a, b);
         
         ComplexNumber subtraction=new ComplexNumber();
-        subtraction=a.sub(b);
+        ComplexNumber.sub(a, b);
         
         ComplexNumber multiplication=new ComplexNumber();
-        multiplication=a.multiply(b);
+        ComplexNumber.multiply(a, b);
         
         ComplexNumber division=new ComplexNumber();
-        division=a.divide(b);
+        ComplexNumber.divide(a, b);
+        
+        ComplexNumber conjugation=new ComplexNumber();
+        ComplexNumber.getConjugate(a);
         
         System.out.println("Addizione coordinate cartesiane: " +sum.stampaRectangular());
         System.out.println("Addizione coordinate polari: " +sum.stampaPolar());
@@ -142,6 +147,8 @@ public class Ese102 {
         
         System.out.println("Divisione coordinate cartesiane: " +division.stampaRectangular());
         System.out.println("Divisione coordinate polari: " +division.stampaPolar());
+        
+        System.out.println("Coniugazione Complessa: " +conjugation.stampaRectangular());
     }
 
     
