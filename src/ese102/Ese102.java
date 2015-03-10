@@ -122,19 +122,19 @@ public class Ese102 {
         b.setRectangular(re1, im1);
         
         ComplexNumber sum=new ComplexNumber();
-        ComplexNumber.add(a, b);
+        sum=ComplexNumber.add(a, b);
         
         ComplexNumber subtraction=new ComplexNumber();
-        ComplexNumber.sub(a, b);
+        subtraction=ComplexNumber.sub(a, b);
         
         ComplexNumber multiplication=new ComplexNumber();
-        ComplexNumber.multiply(a, b);
+        multiplication=ComplexNumber.multiply(a, b);
         
         ComplexNumber division=new ComplexNumber();
-        ComplexNumber.divide(a, b);
+        division=ComplexNumber.divide(a, b);
         
         ComplexNumber conjugation=new ComplexNumber();
-        ComplexNumber.getConjugate(a);
+        conjugation=ComplexNumber.getConjugate(a);
         
         System.out.println("Addizione coordinate cartesiane: " +sum.stampaRectangular());
         System.out.println("Addizione coordinate polari: " +sum.stampaPolar());
