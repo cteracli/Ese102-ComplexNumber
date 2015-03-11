@@ -16,6 +16,7 @@ public class Ese102 {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
         ComplexNumber.setInitRectangular(0, 0);
@@ -23,7 +24,7 @@ public class Ese102 {
         InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader tastiera = new BufferedReader(input);        
         
-        String linea = "";
+        String linea;
 	ComplexNumber a=new ComplexNumber();
         double re=0;
         boolean valoreValido = false;
@@ -31,7 +32,7 @@ public class Ese102 {
             System.out.print("Inserisci numero reale: ");
             linea = tastiera.readLine();
             try {
-                re=Double.valueOf(linea).doubleValue();
+                re=Double.valueOf(linea);
                 valoreValido=true;
             }
             catch (NumberFormatException e) {
@@ -45,7 +46,7 @@ public class Ese102 {
             System.out.print("Inserisci numero immaginario: ");
             linea = tastiera.readLine();
             try {
-                im=Double.valueOf(linea).doubleValue();
+                im=Double.valueOf(linea);
                 valoreValido=true;
             }
             catch (NumberFormatException e) {
@@ -63,7 +64,7 @@ public class Ese102 {
             System.out.print("Inserisci argomento: ");
             linea = tastiera.readLine();
             try {
-                arg=Double.valueOf(linea).doubleValue();
+                arg=Double.valueOf(linea);
                 valoreValido=true;
             }
             catch (NumberFormatException e) {
@@ -77,7 +78,7 @@ public class Ese102 {
             System.out.print("Inserisci modulo: ");
             linea=tastiera.readLine();
             try {
-                mod=Double.valueOf(linea).doubleValue();
+                mod=Double.valueOf(linea);
                 valoreValido=true;
             }
             catch (NumberFormatException e) {
@@ -98,7 +99,7 @@ public class Ese102 {
             System.out.print("Inserisci numero reale per le operazioni: ");
             linea = tastiera.readLine();
             try {
-                re1=Double.valueOf(linea).doubleValue();
+                re1=Double.valueOf(linea);
                 valoreValido=true;
             }
             catch (NumberFormatException e) {
@@ -112,7 +113,7 @@ public class Ese102 {
             System.out.print("Inserisci numero immaginario per le operazioni: ");
             linea = tastiera.readLine();
             try {
-                im1=Double.valueOf(linea).doubleValue();
+                im1=Double.valueOf(linea);
                 valoreValido=true;
             }
             catch (NumberFormatException e) {
@@ -121,19 +122,19 @@ public class Ese102 {
         }
         b.setRectangular(re1, im1);
         
-        ComplexNumber sum=new ComplexNumber();
+        ComplexNumber sum;
         sum=ComplexNumber.add(a, b);
         
-        ComplexNumber subtraction=new ComplexNumber();
+        ComplexNumber subtraction;
         subtraction=ComplexNumber.sub(a, b);
         
-        ComplexNumber multiplication=new ComplexNumber();
+        ComplexNumber multiplication;
         multiplication=ComplexNumber.multiply(a, b);
         
-        ComplexNumber division=new ComplexNumber();
+        ComplexNumber division;
         division=ComplexNumber.divide(a, b);
         
-        ComplexNumber conjugation=new ComplexNumber();
+        ComplexNumber conjugation;
         conjugation=ComplexNumber.getConjugate(a);
         
         System.out.println("Addizione coordinate cartesiane: " +sum.stampaRectangular());
