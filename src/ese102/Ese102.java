@@ -150,6 +150,27 @@ public class Ese102 {
         System.out.println("Divisione coordinate polari: " +division.stampaPolar());
         
         System.out.println("Coniugazione Complessa: " +conjugation.stampaRectangular());
+        
+        ComplexNumber x=new ComplexNumber();
+        ComplexNumber y=new ComplexNumber();
+    
+        x.setRectangular(1,1);
+        y.setRectangular(1,1);
+    
+        if(x==y){
+            System.out.println("x e y si riferiscono alla medesima istanza");
+        }
+        else{
+            System.out.println("x e y si riferiscono a due istanze differenti");
+        }
+
+        if (a.equals(b)){
+            System.out.println("Il numero complesso x coincide y");
+        }
+        else {
+            System.out.println("Il numero complesso x è diverso da y");
+        }
+    
     }
 
     

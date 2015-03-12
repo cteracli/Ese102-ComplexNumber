@@ -99,4 +99,16 @@ public class ComplexNumber {
         conjugation.setRectangular(-im, re);
         return conjugation;
     }
+    
+    @Override
+	public boolean equals(Object o) {
+		boolean r = false;
+		if(o instanceof ComplexNumber) {
+			ComplexNumber p = (ComplexNumber)o;
+			if(this.re == p.getRe() && this.im == p.getIm()) {
+				r = true;
+			}
+		}
+		return r;
+	}
 }
