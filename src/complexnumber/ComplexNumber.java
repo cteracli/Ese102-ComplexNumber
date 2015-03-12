@@ -16,13 +16,27 @@ public class ComplexNumber {
     private double re;
     private double im;
     
+     private StringFormat format;
+     static public enum StringFormat{
+         RECTANGULAR,
+         POLAR
+     
+     }
+     
+     static private StringFormat initFormat;
+     public void setStringFormat(StringFormat format){
+         this.format=format;
+     }
+   
     public ComplexNumber(){
         this.re=initRe;
         this.im=initIm;
+        this.format = ComplexNumber.initFormat;
     }
     static public void setInitRectangular(double re, double im){
         initRe=re;
         initIm=im;
+        initFormat=StringFormat.RECTANGULAR;
     }
     static public void setInitPolar(double modulus, double argument){
         if(modulus<0){
@@ -30,6 +44,7 @@ public class ComplexNumber {
         }
         initRe=modulus*Math.cos(argument);
         initIm=modulus*Math.sin(argument);
+        initFormat=StringFormat.POLAR;
     }
     public double getRe(){
         return re;
@@ -111,4 +126,24 @@ public class ComplexNumber {
 		}
 		return r;
 	}
+        
+         @Override
+    public String toString() {
+        return toString(this.format);
+    }
+    
+     public String toString(StringFormat format) {
+        String r = new String();
+        switch(format) {
+            case RECTANGULAR:
+                r = (float)(this.re) + "+(" + (float)(this.im) + ")i";
+                break;
+            case POLAR:
+                r = (float)(this.getModulus()) + "*exp(i*" + (this.getArgument()) +")";
+                break;
+            default:
+                throw new UnsupportedOperationException();
+        }
+        return r;
+    }
 }

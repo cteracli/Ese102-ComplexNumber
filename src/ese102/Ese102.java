@@ -55,8 +55,10 @@ public class Ese102 {
         }
         
         a.setRectangular(re, im);
-	System.out.println("Coordinate polari: " + a.stampaPolar());
-        System.out.println("Coordinate cartesiane: " + a.stampaRectangular());
+        a.setStringFormat(ComplexNumber.StringFormat.POLAR);
+	System.out.println("Coordinate polari: " +a);
+        a.setStringFormat(ComplexNumber.StringFormat.RECTANGULAR);
+        System.out.println("Coordinate cartesiane: " +a);
         
 	double arg=0;
          valoreValido=false;
@@ -87,8 +89,10 @@ public class Ese102 {
         }
 
 	a.setPolar(mod, arg);
-	System.out.println("Coordinate polari: " + a.stampaPolar());
-        System.out.println("Coordinate cartesiane: " + a.stampaRectangular());
+        a.setStringFormat(ComplexNumber.StringFormat.POLAR);
+	System.out.println("Coordinate polari: " +a);
+        a.setStringFormat(ComplexNumber.StringFormat.RECTANGULAR);
+        System.out.println("Coordinate cartesiane: " +a);
 
         
         ComplexNumber b=new ComplexNumber();
@@ -137,19 +141,28 @@ public class Ese102 {
         ComplexNumber conjugation;
         conjugation=ComplexNumber.getConjugate(a);
         
-        System.out.println("Addizione coordinate cartesiane: " +sum.stampaRectangular());
-        System.out.println("Addizione coordinate polari: " +sum.stampaPolar());
+        sum.setStringFormat(ComplexNumber.StringFormat.RECTANGULAR);
+        System.out.println("Addizione coordinate cartesiane: " +sum);
+        sum.setStringFormat(ComplexNumber.StringFormat.POLAR);
+        System.out.println("Addizione coordinate polari: " +sum);
         
-        System.out.println("Sottrazione coordinate cartesiane: " +subtraction.stampaRectangular());
-        System.out.println("Sottrazione coordinate polari: " +subtraction.stampaPolar());
+        subtraction.setStringFormat(ComplexNumber.StringFormat.RECTANGULAR);
+        System.out.println("Sottrazione coordinate cartesiane: " +subtraction);
+        subtraction.setStringFormat(ComplexNumber.StringFormat.POLAR);
+        System.out.println("Sottrazione coordinate polari: " +subtraction);
         
-        System.out.println("Moltiplicazione coordinate cartesiane: " +multiplication.stampaRectangular());
-        System.out.println("Moltiplicazione coordinate polari: " +multiplication.stampaPolar());
+        multiplication.setStringFormat(ComplexNumber.StringFormat.RECTANGULAR);
+        System.out.println("Moltiplicazione coordinate cartesiane: " +multiplication);
+        multiplication.setStringFormat(ComplexNumber.StringFormat.POLAR);
+        System.out.println("Moltiplicazione coordinate polari: " +multiplication);
         
-        System.out.println("Divisione coordinate cartesiane: " +division.stampaRectangular());
-        System.out.println("Divisione coordinate polari: " +division.stampaPolar());
+        division.setStringFormat(ComplexNumber.StringFormat.RECTANGULAR);
+        System.out.println("Divisione coordinate cartesiane: " +division);
+        division.setStringFormat(ComplexNumber.StringFormat.POLAR);
+        System.out.println("Divisione coordinate polari: " +division);
         
-        System.out.println("Coniugazione Complessa: " +conjugation.stampaRectangular());
+        conjugation.setStringFormat(ComplexNumber.StringFormat.RECTANGULAR);
+        System.out.println("Coniugazione Complessa: " +conjugation);
         
         ComplexNumber x=new ComplexNumber();
         ComplexNumber y=new ComplexNumber();
